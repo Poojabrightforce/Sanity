@@ -1,18 +1,17 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+// sanity.config.ts
+import { defineConfig } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import { schemaTypes } from './schemaTypes/index'; // Import your schema types
 
 export default defineConfig({
   name: 'default',
-  title: 'Test Image ',
-
+  title: 'Test Image',
   projectId: '053fpsne',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [deskTool()],
 
   schema: {
-    types: schemaTypes,
+    types: schemaTypes,  // Add your schemas here
   },
-})
+});
